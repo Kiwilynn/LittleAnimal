@@ -19,19 +19,20 @@ public void run(){
 
    System.out.println("Hello and welcome to 'Little Animal Horror Zoo'");
    System.out.println("The controls are using the input 1, 2, 3 and 4 and then hitting enter");
-   while (Rabbit.b = true){
+   while (Rabbit.b == true){
     
    System.out.println("snake is at : " + snakeX + "," + snakeY);
   
-   //Scanner for user input  
-   y = scan.nextInt();
-
+   
      
    if (snakeX == Rabbit.rabbitX && snakeY == Rabbit.rabbitY){
    System.out.println("Victory");
+   Rabbit.b = false;
    break;
    } 
-   else if(y == 1){
+   //Scanner for user input  
+   y = scan.nextInt();
+   if(y == 1){
    snakeX++;
    }
    else if (y == 2){
@@ -43,17 +44,19 @@ public void run(){
    else if (y == 4){
    snakeY--;
    }
-   else{
+   /*else{
    System.out.println(y + " is not a valid number \nFuck you and fuck this game.");
    
-   /*try {
-   Thread.sleep(3000);
+   try {
+   Thread.sleep(2000);
    } 
    catch(InterruptedException ie) {} 
    for(int i=1;i<500000000;i++){
    System.out.println("Fuck you.");
-   } */
-   }
+   } 
+   }*/
+   
+
   
 
 }

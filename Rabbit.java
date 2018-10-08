@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.Math;
 
 public class Rabbit implements Runnable {
   
@@ -26,7 +27,7 @@ public void run(){
    catch(InterruptedException ie) {}
 
  
-   while (b = true){
+   while (b == true){
    
    System.out.println("I am at : " + rabbitX + "," + rabbitY);
    //Makes x a random number between 1 and 4 both included
@@ -34,12 +35,13 @@ public void run(){
      
    if (rabbitX == Snake.snakeX && rabbitY == Snake.snakeY){
    System.out.println("Arrrgh I am dead");
+   b = false;
    break;
    }
    
-   else if((rabbitX - Snake.snakeX) <= 1){
-   System.out.println("No! Mercy!!");
-   }
+ else if(Math.abs(Snake.snakeX - rabbitX) <= 1 & Math.abs(Snake.snakeY - rabbitY) <= 1){
+ System.out.println("No! Mercy!!");
+ }
    
    else if(rabbitX == 9 && x == 1){
    System.out.println("There's a wall in the way!"); 
@@ -74,7 +76,7 @@ public void run(){
  
    //Makes the method "sleep" for 5 second then prints rabbit location
    try {
-   Thread.sleep(3000);
+   Thread.sleep(1000);
    } 
    catch(InterruptedException ie) {} 
    

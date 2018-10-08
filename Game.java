@@ -6,9 +6,8 @@ public static void main (String [] args){
    Thread snake = new Thread(new Snake(1,1));
    Thread rabbit = new Thread(new Rabbit());
    
-   // Call the Rabbit's method to move.
-   rabbit.start();
-   // Call the snake's method to move
+   // Call the Rabbit's and Snake's method to move.
+   rabbit.start();  
    snake.start();       
 }
 }
